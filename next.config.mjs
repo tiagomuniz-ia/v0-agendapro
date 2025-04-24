@@ -18,18 +18,6 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
-  // Otimizações de performance
-  compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
-  },
-  experimental: {
-    optimizeCss: true,
-    // Otimização de módulos
-    optimizePackageImports: ['@radix-ui/react-icons', 'lucide-react'],
-  },
-  // Otimização de página
-  pageExtensions: ['tsx', 'ts'],
-  poweredByHeader: false,
 }
 
 export default nextConfig

@@ -5,39 +5,22 @@ import { format } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { CalendarIcon, Plus, Search, ArrowUp, ArrowDown, MoreHorizontal, Download, Printer } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import dynamic from 'next/dynamic'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
-// Componentes carregados dinamicamente
-const Card = dynamic(() => import('@/components/ui/card').then(mod => ({ 
-  default: mod.Card,
-  CardContent: mod.CardContent,
-  CardDescription: mod.CardDescription,
-  CardFooter: mod.CardFooter,
-  CardHeader: mod.CardHeader,
-  CardTitle: mod.CardTitle
-})), {
-  loading: () => <div className="h-[200px] w-full animate-pulse bg-muted rounded-lg" />
-})
-
-const Dialog = dynamic(() => import('@/components/ui/dialog').then(mod => ({
-  Dialog: mod.Dialog,
-  DialogContent: mod.DialogContent,
-  DialogDescription: mod.DialogDescription,
-  DialogFooter: mod.DialogFooter,
-  DialogHeader: mod.DialogHeader,
-  DialogTitle: mod.DialogTitle,
-  DialogTrigger: mod.DialogTrigger
-})), {
-  ssr: false
-})
-
-const Calendar = dynamic(() => import('@/components/ui/calendar').then(mod => mod.Calendar), {
-  ssr: false,
-  loading: () => <div className="h-[300px] w-full animate-pulse bg-muted" />
-})
-
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"

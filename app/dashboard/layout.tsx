@@ -1,33 +1,17 @@
 "use client"
 
 import type React from "react"
+
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import dynamic from 'next/dynamic'
 import { Calendar, Home, DollarSign, BarChart, Settings, Menu, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useToast } from "@/hooks/use-toast"
 import { useMobile } from "@/hooks/use-mobile"
-
-// Componentes carregados dinamicamente
-const Sheet = dynamic(() => import('@/components/ui/sheet').then(mod => ({
-  Sheet: mod.Sheet,
-  SheetContent: mod.SheetContent,
-  SheetTrigger: mod.SheetTrigger
-})), {
-  ssr: false,
-  loading: () => null
-})
-
-const Avatar = dynamic(() => import('@/components/ui/avatar').then(mod => ({
-  Avatar: mod.Avatar,
-  AvatarFallback: mod.AvatarFallback,
-  AvatarImage: mod.AvatarImage
-})), {
-  loading: () => <div className="h-10 w-10 rounded-full bg-muted animate-pulse" />
-})
 
 export default function DashboardLayout({
   children,

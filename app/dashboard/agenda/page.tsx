@@ -5,7 +5,7 @@ import { CalendarIcon, ChevronLeft, ChevronRight, Plus, Search, MoreHorizontal }
 import { format, addDays, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, addWeeks, subWeeks } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { Button } from "@/components/ui/button"
-import dynamic from 'next/dynamic'
+import { Calendar } from "@/components/ui/calendar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
